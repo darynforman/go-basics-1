@@ -5,13 +5,17 @@ import (
 	"net/http"
 )
 
+// handler function
 func message(w http.ResponseWriter, r *http.Request) {
-	log.Print(w, "Welcome to my Go web server!")
+	w.Write([]byte("welcome to my go webserver"))
+
 }
 
+// main
 func main() {
 	log.Print("Hello, World!")
 
+	//router
 	mux := http.NewServeMux()
 
 	mux.HandleFunc("/", message)
